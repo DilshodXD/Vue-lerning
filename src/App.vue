@@ -1,30 +1,68 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
-</template>
+  <div class="all">
+    <comment-form @addComment="createComment" />
+    <comment-list v-bind:comments="comments" />
+  </div>
+</template> 
+
+<script>
+import CommentForm from "./components/CommentForm";
+import CommentList from "./components/CommentList";
+
+export default {
+  components: {
+    CommentForm,
+    CommentList,
+  },
+  data() {
+    return {
+      comments: [
+        {
+          id: 1,
+          name: "Dilshod",
+          mail: "Dilshodxdxd@gmail.com",
+          info: "Dilshod",
+        },
+        {
+          id: 2,
+          name: "Abduvoris",
+          mail: "Abduvoris@gmail.com",
+          info: "Abduvoris",
+        },
+        { id: 3, name: "Temur", mail: "Temur@gmail.com", info: "Temur" },
+        {
+          id: 4,
+          name: "Mahmudjon",
+          mail: "Mahmudjon@gmail.com",
+          info: "Mahmudjon",
+        },
+        {
+          id: 5,
+          name: "Muhammadamin",
+          mail: "Muhammadamin@gmail.com",
+          info: "Muhammadamin",
+        },
+      ],
+    };
+  },
+  methods: {
+    createComment(comments) {
+      this.comments.push(comments);
+    },
+  },
+};
+</script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+.all {
+  max-width: 1200px;
+  width: 100%;
+  padding: 15px;
+  margin: 0 auto;
 }
 </style>
