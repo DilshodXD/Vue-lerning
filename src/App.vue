@@ -17,31 +17,11 @@ export default {
   data() {
     return {
       comments: [
-        {
-          id: 1,
-          name: "Dilshod",
-          mail: "Dilshodxdxd@gmail.com",
-          info: "Dilshod",
-        },
-        {
-          id: 2,
-          name: "Abduvoris",
-          mail: "Abduvoris@gmail.com",
-          info: "Abduvoris",
-        },
-        { id: 3, name: "Temur", mail: "Temur@gmail.com", info: "Temur" },
-        {
-          id: 4,
-          name: "Mahmudjon",
-          mail: "Mahmudjon@gmail.com",
-          info: "Mahmudjon",
-        },
-        {
-          id: 5,
-          name: "Muhammadamin",
-          mail: "Muhammadamin@gmail.com",
-          info: "Muhammadamin",
-        },
+        {id: 1,name: "Dilshod",mail: "Dilshodxdxd@gmail.com",info: "Dilshod",},
+        {id: 2,name: "Abduvoris",mail: "Abduvoris@gmail.com",info: "Abduvoris",},
+        {id: 3,name: "Temur",mail: "Temur@gmail.com",info: "Temur" },
+        {id: 4,name: "Mahmudjon",mail: "Mahmudjon@gmail.com",info: "Mahmudjon",},
+        {id: 5,name: "Muhammadamin",mail: "Muhammadamin@gmail.com",info: "Muhammadamin",},
       ],
     };
   },

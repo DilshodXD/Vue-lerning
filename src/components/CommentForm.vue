@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import { addComment } from '@babel/types';
+import { addComment } from "@babel/types";
 
 export default {
   data() {
@@ -43,12 +43,12 @@ export default {
   methods: {
     createComment() {
       this.comments.id = Date.now();
-        this.$emit('addComment', this.comments);
-        this.comments = {
-            name: "",
-            mail: "",
-            info: "",
-        }
+      this.$emit("addComment", this.comments);
+      this.comments = {
+        name: "",
+        mail: "",
+        info: "",
+      };
     },
   },
 };

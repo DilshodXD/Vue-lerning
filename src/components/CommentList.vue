@@ -1,9 +1,7 @@
 <template>
   <div>
     <div class="comment" v-for="comment in comments" v-bind:key="comment.id">
-      <h1><b>Ism: </b>{{ comment.name }}</h1>
-      <p><b>Mail: </b>{{ comment.mail }}</p>
-      <p><b>info: </b>{{ comment.info }}</p>
+      
     </div>
   </div>
 </template>
