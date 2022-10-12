@@ -1,7 +1,7 @@
 <template>
   <div class="all">
     <comment-form @addComment="createComment" />
-    <comment-list v-bind:comments="comments" />
+    <comment-list :comments="comments" />
   </div>
 </template> 
 
@@ -12,7 +12,7 @@ import CommentList from "./components/CommentList";
 export default {
   components: {
     CommentForm,
-    CommentList,
+    CommentList
   },
   data() {
     return {
@@ -25,7 +25,7 @@ export default {
       ],
     };
   },
-  methods: {
+  methods: { 
     createComment(comments) {
       this.comments.push(comments);
     },

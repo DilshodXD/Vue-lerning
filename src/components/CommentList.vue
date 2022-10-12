@@ -1,19 +1,24 @@
 <template>
   <div>
-    <div class="comment" v-for="comment in comments" v-bind:key="comment.id">
-      
+    <div class="comment" v-for="comment in comments" :key="comment.id">
+      <component-item :comment="comment"/>
     </div>
   </div>
 </template>
 
 <script>
+import CommentItem from "./CommentItem.vue"
+
 export default {
-    props:{
-        comments:{
-            type: Array,
-            required: true,
-        }
-    }
+  components: {
+    CommentItem,
+  },
+  props: {
+    comments: {
+      type: Array,
+      required: true,
+    },
+  },
 };
 </script>
 
@@ -23,11 +28,5 @@ export default {
   background-color: #2a2a2a;
   border-radius: 10px;
   padding: 20px 25px;
-}
-.comment > h1 {
-  color: #fff;
-}
-.comment > p {
-  color: #fff;
 }
 </style>
