@@ -12,7 +12,7 @@ import CommentList from "./components/CommentList";
 export default {
   components: {
     CommentForm,
-    CommentList
+    CommentList,
   },
   data() {
     return {

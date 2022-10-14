@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="comment" v-for="comment in comments" :key="comment.id">
-      <component-item :comment="comment"/>
+      <comment-item :comment="comment"/>
     </div>
   </div>
 </template>

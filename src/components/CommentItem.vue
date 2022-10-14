@@ -1,18 +1,18 @@
 <template>
-  <div class="comment">
+  <div class="comment-inn">
     <div>
-      <h1 class="name"><b>Ism: </b>{{ comment.name }}</h1>
+      <h3 class="name"><b>Ism: </b>{{ comment.name }}</h3>
       <p class="mail"><b>Mail: </b>{{ comment.mail }}</p>
       <p class="info"><b>info: </b>{{ comment.info }}</p>
     </div>
-    <button class="btn-danger">Delete</button>
+    <my-button class="btn-danger">Delete</my-button>
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    comments: {
+    comment: {
       type: Array,
       required: true,
     },
@@ -21,10 +21,30 @@ export default {
 </script>
 
 <style scoped>
+.comment-inn{
+  display: flex;
+  justify-content: space-between;
+}
 .name{
   color:#fff;
+  margin-bottom: 10px;
 }
 .mail,.info{
   color:#fff;
+  margin-bottom: 10px;
+}
+.btn-danger{
+  height: min-content;
+  border: none;
+  padding: 5px 18px;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 15px;
+  background-color: rgb(235, 31, 31);
+  transition: .2s;
+}
+.btn-danger:hover{
+  background-color: rgb(235, 31, 31, 0.6);
 }
 </style>

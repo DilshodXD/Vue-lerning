@@ -3,25 +3,25 @@
     <div>
       <h1 class="title">Add comments</h1>
       <form @submit.prevent class="input-all">
-        <input
+        <my-input
           v-model="comments.name"
           type="text"
           class="input"
           placeholder="Enter you name"
         />
-        <input
+        <my-input
           v-model="comments.mail"
           type="email"
           class="input"
           placeholder="Enter you mail"
         />
-        <input
+        <my-input
           v-model="comments.info"
           type="text"
           class="input"
           placeholder="Enter you comment"
         />
-        <button @click="createComment" class="btn">add comments</button>
+        <my-button @click="createComment" class="btn">add comments</my-button>
       </form>
     </div>
   </div>
