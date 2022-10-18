@@ -1,13 +1,22 @@
 <template>
-  <div>
-    <div class="comment" v-for="comment in comments" :key="comment.id">
-      <comment-item :comment="comment"/>
+  <div v-show="comments.length > 0">
+    <h3 class="text-center mt-5 mb-4 text-primary">Comments</h3>
+    <div
+      class="comment"
+      v-for="comment in comments"
+      :key="comment.id"
+      @remove="$emit('remove', comment)"
+    >
+      <comment-item :comment="comment" @remove="$emit('remove', comment)" />
     </div>
+  </div>
+  <div v-show="comments.length == 0">
+    <h2 class="text-center text-danger">we can not found ary comments</h2>
   </div>
 </template>
 
 <script>
-import CommentItem from "./CommentItem.vue"
+import CommentItem from "./CommentItem.vue";
 
 export default {
   components: {

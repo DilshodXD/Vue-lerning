@@ -5,7 +5,7 @@
       <p class="mail"><b>Mail: </b>{{ comment.mail }}</p>
       <p class="info"><b>info: </b>{{ comment.info }}</p>
     </div>
-    <my-button class="btn-danger">Delete</my-button>
+    <my-button class="btn-danger" @click="$emit('remove', comment)">Delete</my-button>
   </div>
 </template>
 
