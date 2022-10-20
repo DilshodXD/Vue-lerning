@@ -1,10 +1,21 @@
 <template>
-  <navbar :showModal="showModal"/>
+  <navbar :showModal="showModal" />
   <div class="all">
     <my-modal v-model:show="modalVisible">
       <comment-form @addComment="createComment" />
     </my-modal>
-    <comment-list :comments="comments" @remove="removeComent" />
+    <comment-list
+      :comments="comments"
+      @remove="removeComent"
+      v-if="!isLoading"
+    />
+    <div v-else>
+      <div class="d-flex justify-content-center">
+        <div class="spinner-border" role="status">
+          <span class="sr-only"></span>
+        </div>
+      </div>
+    </div>
   </div>
 </template> 
 
@@ -12,6 +23,7 @@
 import CommentForm from "./components/CommentForm.vue";
 import CommentList from "./components/CommentList.vue";
 import Navbar from "./components/Navbar.vue";
+import axios from "axios";
 
 export default {
   components: {
@@ -21,14 +33,9 @@ export default {
   },
   data() {
     return {
-      comments: [
-        {id: 1, name: "Dilshod", mail: "Dilshodxdxd@gmail.com", info: "Dilshod"},
-        {id: 2, name: "Abduvoris", mail: "Abduvoris@gmail.com", info: "Abduvoris"},
-        {id: 3, name: "Temur", mail: "Temur@gmail.com", info: "Temur"},
-        {id: 4, name: "Mahmudjon", mail: "Mahmudjon@gmail.com", info: "Mahmudjon"},
-        {id: 5, name: "Muhammadamin", mail: "Muhammadamin@gmail.com", info: "Muhammadamin"},
-      ],
+      comments: [],
       modalVisible: false,
+      isLoading: false,
     };
   },
   methods: {
@@ -42,6 +49,23 @@ export default {
     showModal(modal) {
       this.modalVisible = true;
     },
+    async fetchComment() {
+      try {
+        this.isLoading = true;
+        const response = await axios.get(
+          "https://jsonplaceholder.typicode.com/comments?_limit=10"
+        );
+        this.comments = response.data;
+        this.isLoading = false;
+      } catch (e) {
+        console.log(e);
+      }finally{
+        this.isLoading = false;
+      }
+    },
+  },
+  mounted() {
+    this.fetchComment();
   },
 };
 </script>

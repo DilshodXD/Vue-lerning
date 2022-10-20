@@ -2,8 +2,8 @@
   <div class="comment-inn">
     <div>
       <h3 class="name"><b>Ism: </b>{{ comment.name }}</h3>
-      <p class="mail"><b>Mail: </b>{{ comment.mail }}</p>
-      <p class="info"><b>info: </b>{{ comment.info }}</p>
+      <p class="mail"><b>Mail: </b>{{ comment.email }}</p>
+      <p class="info"><b>info: </b>{{ comment.body }}</p>
     </div>
     <my-button class="btn-danger" @click="$emit('remove', comment)">Delete</my-button>
   </div>

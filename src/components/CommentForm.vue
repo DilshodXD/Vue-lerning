@@ -10,13 +10,13 @@
           placeholder="Enter you name"
         />
         <my-input
-          v-model="comments.mail"
+          v-model="comments.email"
           type="email"
           class="input"
           placeholder="Enter you mail"
         />
         <my-input
-          v-model="comments.info"
+          v-model="comments.body"
           type="text"
           class="input"
           placeholder="Enter you comment"
@@ -35,8 +35,8 @@ export default {
     return {
       comments: {
         name: "",
-        mail: "",
-        info: "",
+        email: "",
+        body: "",
       },
     };
   },
@@ -46,8 +46,8 @@ export default {
       this.$emit("addComment", this.comments);
       this.comments = {
         name: "",
-        mail: "",
-        info: "",
+        email: "",
+        body: "",
       };
     },
   },
